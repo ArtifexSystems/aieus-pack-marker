@@ -54,17 +54,22 @@ const MarkerCalls: Component = () => {
   return (
     <section>
       <h1>Marker notes</h1>
-      <form onSubmit={(event) => { event.preventDefault(); void create(); }}>
-        <label>
-          Note
-          <input
-            value={body()}
-            maxlength={500}
-            onInput={(event) => setBody(event.currentTarget.value)}
-          />
-        </label>
-        <button type="submit" disabled={saving() || body().trim() === ""}>Add note</button>
-      </form>
+      <label>
+        Note
+        <input
+          value={body()}
+          maxlength={500}
+          onInput={(event) => setBody(event.currentTarget.value)}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              void create();
+            }
+          }}
+        />
+      </label>
+      {/* A framed screen cannot submit a form. */}
+      <button type="button" disabled={saving() || body().trim() === ""} onClick={() => void create()}>Add note</button>
       <p role="alert">{error()}</p>
       <ul>
         <For each={rows()} fallback={<li>No notes yet.</li>}>{(note) => <li>{note.body}</li>}</For>
