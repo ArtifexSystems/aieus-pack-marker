@@ -1,0 +1,21 @@
+{
+  "id": "marker",
+  "name": "marker",
+  "version": "0.1.0",
+  "prefix": "marker",
+  "aieus": "*",
+  "depends": [],
+  "touches": {
+    "hosts": [],
+    "secrets": []
+  },
+  "web": {
+    "screens": "web",
+    "views": [
+      {
+        "id": "marker__calls",
+        "label": "Marker calls"
+      }
+    ]
+  }
+}
