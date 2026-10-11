@@ -1,7 +1,7 @@
 {
   "id": "marker",
   "name": "marker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "prefix": "marker",
   "aieus": "*",
   "depends": [],
@@ -14,7 +14,7 @@
     "views": [
       {
         "id": "marker__calls",
-        "label": "Marker calls"
+        "label": "Marker notes"
       }
     ]
   }
